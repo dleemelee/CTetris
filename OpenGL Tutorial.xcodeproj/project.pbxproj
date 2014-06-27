@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		6F0A00D2194B192200F4DC21 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F0A00D1194B192200F4DC21 /* main.cpp */; };
 		6F0A00D4194B192200F4DC21 /* OpenGL_Tutorial.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6F0A00D3194B192200F4DC21 /* OpenGL_Tutorial.1 */; };
+		6F0A00DB194B192D00F4DC21 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F0A00DA194B192D00F4DC21 /* Cocoa.framework */; };
+		6F0A00DD194B193400F4DC21 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F0A00DC194B193400F4DC21 /* OpenGL.framework */; };
+		6F0A00DF194B193C00F4DC21 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F0A00DE194B193C00F4DC21 /* GLUT.framework */; };
+		6F4ADCF519500CE2001FB6E2 /* CTetrimino.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F4ADCF319500CE2001FB6E2 /* CTetrimino.cpp */; };
+		6FED5CF8195D009C00E7B236 /* CTetrisBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FED5CF6195D009C00E7B236 /* CTetrisBoard.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +33,13 @@
 		6F0A00CE194B192200F4DC21 /* OpenGL Tutorial */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "OpenGL Tutorial"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F0A00D1194B192200F4DC21 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6F0A00D3194B192200F4DC21 /* OpenGL_Tutorial.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = OpenGL_Tutorial.1; sourceTree = "<group>"; };
+		6F0A00DA194B192D00F4DC21 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		6F0A00DC194B193400F4DC21 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		6F0A00DE194B193C00F4DC21 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		6F4ADCF319500CE2001FB6E2 /* CTetrimino.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CTetrimino.cpp; sourceTree = "<group>"; };
+		6F4ADCF419500CE2001FB6E2 /* CTetrimino.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTetrimino.h; sourceTree = "<group>"; };
+		6FED5CF6195D009C00E7B236 /* CTetrisBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CTetrisBoard.cpp; sourceTree = "<group>"; };
+		6FED5CF7195D009C00E7B236 /* CTetrisBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTetrisBoard.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +47,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F0A00DF194B193C00F4DC21 /* GLUT.framework in Frameworks */,
+				6F0A00DD194B193400F4DC21 /* OpenGL.framework in Frameworks */,
+				6F0A00DB194B192D00F4DC21 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +59,9 @@
 		6F0A00C5194B192200F4DC21 = {
 			isa = PBXGroup;
 			children = (
+				6F0A00DE194B193C00F4DC21 /* GLUT.framework */,
+				6F0A00DC194B193400F4DC21 /* OpenGL.framework */,
+				6F0A00DA194B192D00F4DC21 /* Cocoa.framework */,
 				6F0A00D0194B192200F4DC21 /* OpenGL Tutorial */,
 				6F0A00CF194B192200F4DC21 /* Products */,
 			);
@@ -62,6 +80,10 @@
 			children = (
 				6F0A00D1194B192200F4DC21 /* main.cpp */,
 				6F0A00D3194B192200F4DC21 /* OpenGL_Tutorial.1 */,
+				6F4ADCF319500CE2001FB6E2 /* CTetrimino.cpp */,
+				6F4ADCF419500CE2001FB6E2 /* CTetrimino.h */,
+				6FED5CF6195D009C00E7B236 /* CTetrisBoard.cpp */,
+				6FED5CF7195D009C00E7B236 /* CTetrisBoard.h */,
 			);
 			path = "OpenGL Tutorial";
 			sourceTree = "<group>";
@@ -117,7 +139,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FED5CF8195D009C00E7B236 /* CTetrisBoard.cpp in Sources */,
 				6F0A00D2194B192200F4DC21 /* main.cpp in Sources */,
+				6F4ADCF519500CE2001FB6E2 /* CTetrimino.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +251,7 @@
 				6F0A00D9194B192200F4DC21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
