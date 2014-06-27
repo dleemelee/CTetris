@@ -41,11 +41,18 @@ int CTetrimino::GetBlockCode( )
 void CTetrimino::NextBlockPosition(int movingDirection)
 {
     // 이동 방향에 따라서 deltaX, deltaY 값 결정
+<<<<<<< HEAD
 
     
     int deltaX = 0;
     int deltaY = 0;
     
+=======
+    bool is_rotated = false;
+    int deltaX = 0;
+    int deltaY = 0;
+    int nextBlockPattern = BlockPattern+8;
+>>>>>>> cc06218b460a17a5e6cbacfa569a8c336df0d7e3
     switch (movingDirection) {
         case LEFT_MOVE:
             deltaX = (-1);
@@ -59,6 +66,82 @@ void CTetrimino::NextBlockPosition(int movingDirection)
             deltaX = 0;
             deltaY = (-1);
             break;
+<<<<<<< HEAD
+=======
+        case ROTATE_CW:
+            nextBlockPattern--;
+            is_rotated = true;
+        case ROTATE_CCW:
+            //nextBlockPattern--;
+            // 모듈화 필요
+            switch ( BlockCode ) {
+                case T_BLOCK:
+                    switch ( nextBlockPattern % 4 ) {
+                        case 0:
+                            nextBlockPosition[0][0] = coordX;
+                            nextBlockPosition[0][1] = coordY;
+                            
+                            nextBlockPosition[1][0] = coordX+1;
+                            nextBlockPosition[1][1] = coordY;
+                            
+                            nextBlockPosition[2][0] = coordX-1;
+                            nextBlockPosition[2][1] = coordY;
+                            
+                            nextBlockPosition[3][0] = coordX;
+                            nextBlockPosition[3][1] = coordY+1;
+                            
+                            break;
+                        case 1:
+                            nextBlockPosition[0][0] = coordX;
+                            nextBlockPosition[0][1] = coordY;
+                            
+                            nextBlockPosition[1][0] = coordX+1;
+                            nextBlockPosition[1][1] = coordY;
+                            
+                            nextBlockPosition[2][0] = coordX;
+                            nextBlockPosition[2][1] = coordY-1;
+                            
+                            nextBlockPosition[3][0] = coordX;
+                            nextBlockPosition[3][1] = coordY+1;
+                            
+                            break;
+                        case 2:
+                            nextBlockPosition[0][0] = coordX;
+                            nextBlockPosition[0][1] = coordY;
+                            
+                            nextBlockPosition[1][0] = coordX+1;
+                            nextBlockPosition[1][1] = coordY;
+                            
+                            nextBlockPosition[2][0] = coordX-1;
+                            nextBlockPosition[2][1] = coordY;
+                            
+                            nextBlockPosition[3][0] = coordX;
+                            nextBlockPosition[3][1] = coordY-1;
+                            
+                            break;
+                        case 3:
+                            nextBlockPosition[0][0] = coordX;
+                            nextBlockPosition[0][1] = coordY;
+                            
+                            nextBlockPosition[1][0] = coordX;
+                            nextBlockPosition[1][1] = coordY-1;
+                            
+                            nextBlockPosition[2][0] = coordX-1;
+                            nextBlockPosition[2][1] = coordY;
+                            
+                            nextBlockPosition[3][0] = coordX;
+                            nextBlockPosition[3][1] = coordY+1;
+                            
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+>>>>>>> cc06218b460a17a5e6cbacfa569a8c336df0d7e3
             break;
         default:
             deltaX = 0;
@@ -66,6 +149,7 @@ void CTetrimino::NextBlockPosition(int movingDirection)
             break;
     }
     
+<<<<<<< HEAD
     // 현재 블럭 위치로 nextBlockPosition 배열 초기화
     for ( int i = 0 ; i < 4 ; i++ )
         for ( int j = 0 ; j < 2 ; j++ )
@@ -77,6 +161,21 @@ void CTetrimino::NextBlockPosition(int movingDirection)
     {
         nextBlockPosition[i][0] += deltaX;
         nextBlockPosition[i][1] += deltaY;
+=======
+    if ( is_rotated != true ){
+        // 현재 블럭 위치로 nextBlockPosition 배열 초기화
+        for ( int i = 0 ; i < 4 ; i++ )
+            for ( int j = 0 ; j < 2 ; j++ )
+            {
+                nextBlockPosition[i][j] = blockPosition[i][j];
+            }
+        // 다음 블럭 위치 계산해서 nextBlockPosition에 저장
+        for ( int i = 0 ; i < 4 ; i++ )
+        {
+            nextBlockPosition[i][0] += deltaX;
+            nextBlockPosition[i][1] += deltaY;
+        }
+>>>>>>> cc06218b460a17a5e6cbacfa569a8c336df0d7e3
     }
 }
 
@@ -170,6 +269,7 @@ int CTetrimino::GetCoordY( )
 
 void CTetrimino::RotateCW( )
 {
+<<<<<<< HEAD
     this->BlockPattern++;
     this->RenderBlock();
     cout << " Rotate CW Collision" << endl;
@@ -178,6 +278,31 @@ void CTetrimino::RotateCCW( )
 {
 //    this->BlockPattern++;
 //    this->RenderBlock();
+=======
+    if ( this->CollisionCheck( ROTATE_CW ) != true )
+    {
+        this->BlockPattern--;
+        this->RenderBlock();
+        cout << " Rotate CW Collision" << endl;
+    }
+    else
+    {
+        this->RenderBlock();
+    }
+
+}
+void CTetrimino::RotateCCW( )
+{
+    if ( this->CollisionCheck( ROTATE_CCW ) != true )
+    {
+        this->BlockPattern++;
+        this->RenderBlock();
+    }
+    else
+    {
+        this->RenderBlock();
+    }
+>>>>>>> cc06218b460a17a5e6cbacfa569a8c336df0d7e3
 }
 
 void CTetrimino::MoveLeft( )
@@ -243,15 +368,25 @@ bool CTetrimino::CollisionCheck( int movingDirection )
         case DOWN_MOVE:
             NextBlockPosition( DOWN_MOVE );
             break;
+<<<<<<< HEAD
 
         /*
+=======
+>>>>>>> cc06218b460a17a5e6cbacfa569a8c336df0d7e3
         case ROTATE_CW:
             NextBlockPosition( ROTATE_CW );
             break;
         case ROTATE_CCW:
             NextBlockPosition( ROTATE_CCW );
             break;
+<<<<<<< HEAD
          */
+=======
+        
+            
+            
+            
+>>>>>>> cc06218b460a17a5e6cbacfa569a8c336df0d7e3
         default:
             break;
     }
